@@ -1,0 +1,2 @@
+2025-07-08 19:02:55,936 - INFO-20 -say_hello- Reading The CSV file
+2025-07-08 19:02:55,936 - ERROR-40 -<module>- Error occurred while reading the CSV: [Errno 2] No such file or directory: 'automobile1.csv'

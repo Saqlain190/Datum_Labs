@@ -1,0 +1,13 @@
+{
+  "name": "Ali",
+  "age": 20,
+  "grades": {
+    "math": 85,
+    "science": 90,
+    "english": 78
+  },
+  "address": {
+    "city": "Lahore",
+    "zip": "54000"
+  }
+}

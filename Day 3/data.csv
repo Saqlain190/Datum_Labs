@@ -1,0 +1,2 @@
+name,age,grades,address
+Ali,20,"{'math': 85, 'science': 90, 'english': 78}","{'city': 'Lahore', 'zip': '54000'}"

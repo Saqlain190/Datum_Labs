@@ -21,7 +21,7 @@ data = {
 
     },
     "account" : {
-        "creatred_at " : "2024-01-11",
+        "created_at " : "2024-01-11",
         "status" : "active"
     }
 }

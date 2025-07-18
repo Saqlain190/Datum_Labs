@@ -1,2 +1,2 @@
 user,account
-"{'id': 123, 'name': {'first': 'Alice', 'last': 'Johnson'}, 'Location ': {'country': 'Germany', 'city': {'name': 'Berlin', 'postal': {'code': '10115', 'area': 'Mitte'}}}}","{'creatred_at ': '2024-01-11', 'status': 'active'}"
+"{'id': 123, 'name': {'first': 'Alice', 'last': 'Johnson'}, 'Location ': {'country': 'Germany', 'city': {'name': 'Berlin', 'postal': {'code': '10115', 'area': 'Mitte'}}}}","{'created_at ': '2024-01-11', 'status': 'active'}"

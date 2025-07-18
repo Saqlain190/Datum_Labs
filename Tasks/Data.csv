@@ -1,2 +1,2 @@
-user,account
-"{'id': 123, 'name': {'first': 'Alice', 'last': 'Johnson'}, 'Location ': {'country': 'Germany', 'city': {'name': 'Berlin', 'postal': {'code': '10115', 'area': 'Mitte'}}}}","{'created_at ': '2024-01-11', 'status': 'active'}"
+user.id,user.name.first,user.name.last,user.Location.country,user.Location.city.name,user.Location.city.postal.code,user.Location.city.postal.area,account.created_at,account.status
+123,Alice,Johnson,Germany,Berlin,10115,Mitte,2024-01-11,active

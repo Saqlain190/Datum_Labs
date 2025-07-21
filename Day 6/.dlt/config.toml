@@ -1,0 +1,12 @@
+# to select tables names
+[sources.sql_database]
+table_names = [
+    "employees",  
+]
+table = "<configure me>" # fill this in!
+
+[sources.chess]
+config_int = 0 # fill this in!
+
+[runtime]
+dlthub_telemetry = true

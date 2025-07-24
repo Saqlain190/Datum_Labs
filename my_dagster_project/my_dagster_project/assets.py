@@ -2,6 +2,7 @@ from dagster import asset
 import pandas as pd
 
 sample_data_file = "myfile.csv"
+processed_data_file = "processed_data_file"
 
 @asset
 def hello_asset():

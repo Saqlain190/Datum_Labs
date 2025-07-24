@@ -1,2 +1,2 @@
-user.id,user.name.first,user.name.last,user.Location.country,user.Location.city.name,user.Location.city.postal.code,user.Location.city.postal.area,account.created_at,account.status
+user_id,user_name_first,user_name_last,user_Location_country,user_Location_city_name,user_Location_city_postal_code,user_Location_city_postal_area,account_created_at,account_status
 123,Alice,Johnson,Germany,Berlin,10115,Mitte,2024-01-11,active

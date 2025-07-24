@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+github_sources/__init__.py
+github_sources/assets.py
+github_sources/definitions.py
+github_sources/github_pipeline.py
+github_sources.egg-info/PKG-INFO
+github_sources.egg-info/SOURCES.txt
+github_sources.egg-info/dependency_links.txt
+github_sources.egg-info/requires.txt
+github_sources.egg-info/top_level.txt

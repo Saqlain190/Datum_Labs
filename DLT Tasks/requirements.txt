@@ -1,0 +1,2 @@
+dlt[duckdb,snowflake]>=1.14.1
+snowflake-connector-python>=3.5.0

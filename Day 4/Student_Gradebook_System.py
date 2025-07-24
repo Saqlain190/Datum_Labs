@@ -1,9 +1,10 @@
 import csv,os
 class grades():
     def __init__(self, name,id, grade,):
-        self.name=name
+        name=name
         self.id = id
         self.grade = grade
+        print("Saqlain",name)
     def add_student(self):
         self.name =str(input("Enter the Name of the student:"))
         self.id = int(input("Enter ID of Student: "))
@@ -12,6 +13,7 @@ class grades():
         file_exists=os.path.isfile("students_grades.csv")
 
         file_empty=not file_exists  or os.stat("students_grades.csv").st_size == 0
+        print(os.stat("students_grades.csv"))
 
         with open("students_grades.csv","a",newline='') as file:
 
@@ -39,6 +41,9 @@ class grades():
                 new_rows.append([self.name, self.id, self.grade])
               else:
                 new_rows.append(row)
+            
+            
+          
 
         with open("students_grades.csv",'w',newline='') as file:
             writer = csv.writer(file)

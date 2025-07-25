@@ -1,0 +1,75 @@
+[32m2025-07-24 11:28:49 +0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c65e7b45-1c57-46aa-8350-6290738a3186 - 21740 - LOGS_CAPTURED - Started capturing logs in process (pid: 21740).
+[32m2025-07-24 11:28:49 +0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c65e7b45-1c57-46aa-8350-6290738a3186 - 21740 - postgres_to_snowflake - STEP_START - Started execution of step "postgres_to_snowflake".
+[32m2025-07-24 11:28:49 +0500[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - c65e7b45-1c57-46aa-8350-6290738a3186 - 21740 - postgres_to_snowflake - STEP_FAILURE - Execution of step "postgres_to_snowflake" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "postgres_to_snowflake"::
+
+dlt.common.configuration.exceptions.InvalidNativeValue: `ConnectionStringCredentials` cannot parse the configuration value provided. The value is of type `str` and comes from the sections `('credentials',)` Value may be a secret and is not shown. Details:  The expected representation for `ConnectionStringCredentials` is a standard database connection string with the following format: `driver://username:password@host:port/database`
+
+Stack Trace:
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 392, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 137, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 117, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+                                                                    ^^^^^^^^^^^^^^^^^^
+  File "/home/user6/Project Dagster with dlt/my_source/my-source/my_source/assets.py", line 10, in postgres_to_snowflake
+    source = sql_database(credentials)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/dlt/extract/decorators.py", line 208, in __call__
+    source = self._deco_f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/dlt/extract/decorators.py", line 303, in _wrap
+    rv = conf_f(*args, **kwargs)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/dlt/common/configuration/inject.py", line 269, in _wrap
+    config = resolve_config(bound_args, accept_partial_=accept_partial)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/dlt/common/configuration/inject.py", line 197, in resolve_config
+    return resolve_configuration(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/dlt/common/configuration/resolve.py", line 75, in resolve_configuration
+    return _resolve_configuration(config, sections, (), explicit_value, accept_partial)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/dlt/common/configuration/resolve.py", line 181, in _resolve_configuration
+    _resolve_config_fields(
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/dlt/common/configuration/resolve.py", line 302, in _resolve_config_fields
+    current_value, traces = _resolve_config_field(
+                            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/dlt/common/configuration/resolve.py", line 415, in _resolve_config_field
+    value = _resolve_configuration(
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/dlt/common/configuration/resolve.py", line 178, in _resolve_configuration
+    explicit_value = _maybe_parse_native_value(config, explicit_value, embedded_sections)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/dlt/common/configuration/resolve.py", line 159, in _maybe_parse_native_value
+    raise InvalidNativeValue(type(config), type(native_value), embedded_sections, v_err)
+
+The above exception occurred during handling of the following exception:
+dlt.common.configuration.specs.exceptions.InvalidConnectionString: The expected representation for `ConnectionStringCredentials` is a standard database connection string with the following format: `driver://username:password@host:port/database`
+
+Stack Trace:
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/dlt/common/configuration/resolve.py", line 143, in _maybe_parse_native_value
+    config.parse_native_representation(native_value)
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/dlt/common/configuration/specs/connection_string_credentials.py", line 47, in parse_native_representation
+    raise InvalidConnectionString(self.__class__, native_value, self.drivername)
+
+The above exception occurred during handling of the following exception:
+ValueError: invalid literal for int() with base 10: 'port'
+
+Stack Trace:
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/dlt/common/configuration/specs/connection_string_credentials.py", line 40, in parse_native_representation
+    url = make_url(native_value)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+    return _parse_url(name_or_url)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user6/Project Dagster with dlt/.venv/lib/python3.12/site-packages/sqlalchemy/engine/url.py", line 917, in _parse_url
+    components["port"] = int(components["port"])
+                         ^^^^^^^^^^^^^^^^^^^^^^^
+[0m

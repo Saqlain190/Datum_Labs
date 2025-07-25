@@ -1,0 +1,5 @@
+[32m2025-07-24 12:00:28 +0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 842590c5-2523-489b-ac76-648489b54ef5 - 68210 - LOGS_CAPTURED - Started capturing logs in process (pid: 68210).
+[32m2025-07-24 12:00:28 +0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 842590c5-2523-489b-ac76-648489b54ef5 - 68210 - load_postgres_data - STEP_START - Started execution of step "load_postgres_data".
+[32m2025-07-24 12:01:20 +0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 842590c5-2523-489b-ac76-648489b54ef5 - 68210 - load_postgres_data - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
+[32m2025-07-24 12:01:20 +0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 842590c5-2523-489b-ac76-648489b54ef5 - 68210 - load_postgres_data - ASSET_MATERIALIZATION - Materialized value load_postgres_data.
+[32m2025-07-24 12:01:20 +0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 842590c5-2523-489b-ac76-648489b54ef5 - 68210 - load_postgres_data - STEP_SUCCESS - Finished execution of step "load_postgres_data" in 52.22s.

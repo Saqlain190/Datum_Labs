@@ -1,0 +1,7 @@
+storage:
+  postgres:
+    postgres_db:
+      username: postgres_user
+      password: postgres_password
+      hostname: docker_example_postgresql
+      db_name: postgres_db

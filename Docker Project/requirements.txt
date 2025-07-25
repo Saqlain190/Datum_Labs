@@ -1,0 +1,7 @@
+dlt[postgresql,snowflake]
+dagster
+dagster-webserver
+dagster[postgres]
+dagster-postgres 
+psycopg2-binary
+snowflake-connector-python

@@ -1,0 +1,5 @@
+Loaded Postgres source with credentials: postgresql+psycopg2://postgres:neEs2w6QNU0YplJMChzGuxA8Zo7DI93@104.248.248.69:54321/postgres
+DLT load info: Pipeline postgres_to_snowflake load step completed in 18.95 seconds
+1 load package(s) were loaded to destination snowflake and into dataset docker_project
+The snowflake destination used snowflake://SAQLAIN15I:***@ELKPBLO-QP13448/SNOWFLAKE_LEARNING_DB location to store data
+Load package 1753437728.6988072 is LOADED and contains no failed jobs

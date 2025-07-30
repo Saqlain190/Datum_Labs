@@ -33,8 +33,11 @@ def run_postgres_to_snowflake():
     pipeline = dlt.pipeline(
         pipeline_name="postgres_to_snowflake",
         destination="snowflake",
-        dataset_name="postgres_all_datatest"
+        dataset_name="postgres_all_datatestS",
+        progress='log'
     )
+
+    print('dlt.sources.incremental("last_modified")', dlt.sources.incremental("last_modified"))
 
 
     info = pipeline.run(source,write_disposition="merge") 

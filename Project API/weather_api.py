@@ -1,10 +1,15 @@
 from typing import Any, Optional
 import dlt
 from dlt.sources.rest_api import RESTAPIConfig, rest_api_resources
+import logging
 
 @dlt.source(name="weather_api_key")
 def weather_source(api_key: Optional[str] = dlt.secrets.value) -> Any:
-    print("Loaded API Key:", api_key)
+
+    if not api_key:
+        logging.error("Api key is Missing")
+    
+    logging.info("Api Key is Correct")
 
     config: RESTAPIConfig = {
         "client": {
@@ -63,14 +68,18 @@ def weather_source(api_key: Optional[str] = dlt.secrets.value) -> Any:
 
 
 def load_weather() -> None:
-    pipeline = dlt.pipeline(
+    try:
+     pipeline = dlt.pipeline(
         pipeline_name="rest_api_weather",
         destination='snowflake',
         dataset_name="weather_data",
     )
-
-    load_info = pipeline.run(weather_source())
-    print(load_info)
+     load_info = pipeline.run(weather_source())
+     print(load_info)
+     logging.info("Pipeline Run Sucessfulyy")
+     
+    except Exception as e:
+       logging.exception("Pipeline Failed")
 
 
 if __name__ == "__main__":
